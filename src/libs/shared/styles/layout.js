@@ -103,7 +103,7 @@ export const Poster = styled.img`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: min(500px, 40vw);
+  height: min(400px, 40vw);
   border-radius: 8px;
   margin-bottom: 20px;
   @media (max-width: 768px) {
