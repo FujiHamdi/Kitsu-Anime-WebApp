@@ -2,8 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAnimeDetail } from "../hooks/useAnimeDetail";
 import PageStatus from "@/libs/shared/components/PageStatus";
 import { NavigationButton } from "@/libs/shared/styles/button";
-import { DetailText, DetailTextSecondary, Divider, SubTitleAnime, Synopsis, TitleAnime } from "@/libs/shared/styles/text";
-import { Container, ContentWrapper, FlexWrapper, InfoColumn, Poster } from "@/libs/shared/styles/layout";
+import { DetailTextSecondary, Divider, RankLabel, RankNumber, SubTitleAnime, Synopsis, TitleAnime } from "@/libs/shared/styles/text";
+import { Container, ContentWrapper, FlexWrapper, InfoColumn, Poster, RankItem, RankWrapper } from "@/libs/shared/styles/layout";
 import { Star } from "@/assets/icons/star";
 
 export default function AnimeDetailPage() {
@@ -27,30 +27,42 @@ export default function AnimeDetailPage() {
       )}
       <ContentWrapper>
         <Poster src={attributes?.posterImage?.large} alt={attributes?.titles?.en} />
-
         <InfoColumn>
           <Synopsis>{attributes?.synopsis}</Synopsis>
-
-          <FlexWrapper> 
-            <DetailTextSecondary>{attributes?.userCount || "0"} views</ DetailTextSecondary>
-            <DetailTextSecondary>
-              Rating <Star /> {attributes?.averageRating || "N/A"} 
-            </DetailTextSecondary>
+            <Divider />
+            <FlexWrapper> 
+               <DetailTextSecondary>
+              {attributes?.userCount || "N/A"}  Viewers 
+              </DetailTextSecondary>
+              <DetailTextSecondary>
+                Rating <Star /> {attributes?.averageRating || "N/A"} 
+              </DetailTextSecondary>
           </FlexWrapper>
+           <Divider />
+           <RankWrapper>
+            <RankItem>
+              <RankNumber>
+                {attributes?.popularityRank
+                  ? `#${attributes.popularityRank}`
+                  : "N/A"}
+              </RankNumber>
+              <RankLabel>Popularity</RankLabel>
+            </RankItem>
+
+            <RankItem>
+              <RankNumber>
+                {attributes?.ratingRank
+                  ? `#${attributes.ratingRank}`
+                  : "N/A"}
+              </RankNumber>
+              <RankLabel>Ranked</RankLabel>
+            </RankItem>
+          </RankWrapper>
           <Divider />
-
-          <DetailText>Age Rating: {attributes?.ageRatingGuide || "N/A"}</DetailText>
-          <Divider />
-
-          <DetailText>Episode Length: {attributes?.episodeLength ? `${attributes?.episodeLength} minutes` : "N/A"}</DetailText>
-          <DetailText>Total Episode: {attributes?.episodeCount || "N/A"}</DetailText>
-          <DetailText>Next Release: {attributes?.nextRelease || "N/A"}</DetailText>
-          <DetailText>Status: {attributes?.status === 'finished' ? "Completed" : attributes?.status || "Unknown"}</DetailText>
-          <Divider />
-
-          <DetailText>Popularity rank: {attributes?.popularityRank|| "N/A"}</DetailText>
-          <DetailText>Rating rank: {attributes?.ratingRank|| "N/A"}</DetailText>
-
+          <DetailTextSecondary>Age Rating: {attributes?.ageRatingGuide || "N/A"}</DetailTextSecondary>
+          <DetailTextSecondary>Duration: {attributes?.episodeLength ? `${attributes?.episodeLength} minutes` : "N/A"}</DetailTextSecondary>
+          <DetailTextSecondary>Status: {attributes?.status === 'finished' ? "Completed" : attributes?.status === "current" ? "Ongoing" : "Unknown"}</DetailTextSecondary>
+          <DetailTextSecondary> {attributes?.subtype === 'movie' ? "Movie" : "TV Series"}</DetailTextSecondary>
         </InfoColumn>
       </ContentWrapper>
     </Container>

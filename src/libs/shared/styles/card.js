@@ -22,8 +22,8 @@ export const Card = styled.div`
 `;
 
 export const CardSkeleton = styled.div`
-  width: 250px;
-  height: 300px;
+  width: 240px;
+  height: 400px;
   border-radius: 8px;
   background: #808080;
   background-image: linear-gradient(
@@ -47,12 +47,12 @@ export const CardSkeleton = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 190px;
-    height: 210px;
+    width: 155px;
+    height: 220px;
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
-    width: 220px;
+    width: 155px;
     height: 260px;
   }
 `;

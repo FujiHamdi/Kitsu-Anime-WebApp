@@ -22,7 +22,7 @@ export const TitleBox = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  gap: 20px;
+  gap: 12px;
   grid-template-columns: repeat(5, 1fr);  
   min-height: 800px;
   @media (max-width: 480px) {
@@ -61,6 +61,19 @@ export const FlexWrapper = styled.div`
   margin: ${({ margin }) => margin || "0"};
 `;
 
+export const RankWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 20px 20px 5px 0;
+  flex-wrap: wrap;
+`;
+
+export const RankItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const PaginationContainer = styled.div`
   display: flex;
@@ -103,7 +116,7 @@ export const Poster = styled.img`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: min(400px, 40vw);
+  height: min(380px, 40vw);
   border-radius: 8px;
   margin-bottom: 20px;
   @media (max-width: 768px) {
@@ -131,7 +144,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const SearchBox = styled.div`
-  margin: -1rem 0 2rem 0;
+  margin: -1rem 0 1rem 0;
   text-align: center;
 `;
 

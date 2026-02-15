@@ -24,7 +24,7 @@ const AnimeCard = React.memo(({ anime }) => {
           {truncate(attributes?.titles?.en || attributes?.titles?.en_jp, 20) || "No English Title"}
         </DetailText>
         <p>
-          {truncate(attributes?.titles?.ja_jp, 20) || "No Japanese Title"}
+          {truncate(attributes?.titles?.ja_jp, 10) || "No Japanese Title"}
         </p>
         <DetailText style={{ color: "yellow" }}> Rating <Star /> {attributes.averageRating || "N/A"}  </DetailText>
       </Content>

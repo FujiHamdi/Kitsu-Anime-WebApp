@@ -26,7 +26,7 @@ export const PaginationButton = styled(Button)`
 `;
 
 export const NavigationButton = styled(Button)`
-  padding: 10px 30px;
+  padding: 5px 20px;
   font-size: 1rem;
   border-radius: 6px;
   display: flex;
