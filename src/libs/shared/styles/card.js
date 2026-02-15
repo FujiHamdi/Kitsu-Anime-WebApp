@@ -60,11 +60,11 @@ export const CardSkeleton = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 2.5 / 3;
   object-fit: cover;
   display: block;
   @media (max-width: 480px) {
-    aspect-ratio: 2 / 3; /* keep same ratio, but parent width will shrink */
+    aspect-ratio: 2 / 3; 
   }
 `;
 
