@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 
 export const TitlePage = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   background: linear-gradient(180deg, #181968, #22c5ba);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
+  margin-top: -1px
 
   @media (max-width: 600px) {
     font-size: 1.5rem;

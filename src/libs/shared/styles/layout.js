@@ -22,7 +22,7 @@ export const TitleBox = styled.div`
 
 export const Grid = styled.div`
   display: grid;
-  gap: 12px;
+  gap: 20px;
   grid-template-columns: repeat(5, 1fr);  
   min-height: 800px;
   @media (max-width: 480px) {
