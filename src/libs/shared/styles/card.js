@@ -22,7 +22,7 @@ export const Card = styled.div`
 `;
 
 export const CardSkeleton = styled.div`
-  width: 330px;
+  width: 280px;
   height: 400px;
   border-radius: 8px;
   background: #808080;
